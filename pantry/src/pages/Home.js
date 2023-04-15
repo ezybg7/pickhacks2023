@@ -1,10 +1,10 @@
+import '../styles/Home.css'
+
 const Home = () => {
-
-
 
   return ( 
     <div className = "home">
-      <h2>Homepage!</h2>
+      <h1>Homepage!</h1>
       
     </div>
    );

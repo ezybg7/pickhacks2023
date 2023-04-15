@@ -1,14 +1,21 @@
-//import './styles/App.css';
+import './styles/App.css';
+import Home from './pages/Home';
+import About from './pages/About';
 import Navbar from './components/Navbar';
-import Home from './Home';
-
+import {Route, Routes} from 'react-router-dom'
 function App() {
   const title = 'Welcome to the website!';
+
+
+
   return (
     <div className="App">
-      <Navbar />
+      <Navbar/>
       <div className="content">
-        <Home/>
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/about' element={<About/>} />
+        </Routes>
       </div>
     </div>
   );
