@@ -12,10 +12,12 @@ const Navbar = () => {
         <Link to = "/foods" className = "navbarButtons"> Foods </Link>
         <Link to = "/register" className = "navbarButtons"> Register </Link>
         <Link to = "/login" className = "navbarButtons"> Login </Link>
+        <Link to = "/grocery-map" className = "navbarButtons"> Grocery Map </Link>
 
       </div>
     </nav>
    );
+
 }
  
 export default Navbar;

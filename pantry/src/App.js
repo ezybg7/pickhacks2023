@@ -4,6 +4,7 @@ import About from './pages/About';
 import Foods from './pages/Foods';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import GroceryMap from './pages/GroceryMap';
 import Navbar from './components/Navbar';
 import {Route, Routes} from 'react-router-dom'
 
@@ -19,6 +20,9 @@ function App() {
           <Route path='/foods' element={<Foods/>} />
           <Route path='/register' element={<Register/>} />
           <Route path='/login' element={<Login/>} />
+          <Route path='/grocery-map' element={<GroceryMap/>} />
+
+
         </Routes>
       </div>
     </div>
