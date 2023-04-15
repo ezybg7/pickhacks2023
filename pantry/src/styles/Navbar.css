@@ -21,11 +21,12 @@
     gap: 1rem;
 }
 
-.navbar h1 {
-    font-size: 72px;
+.site-title {
+    font-size: 50px;
     background: -webkit-linear-gradient(#2E915F, #064525);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin: 5px;
 }
 
 
@@ -38,8 +39,11 @@
     color: inherit;
     margin-left: 16px;
     text-decoration: none;
-    padding: 6px;
+    height: 100%;
+    display: flex;
+    padding: .25rem;
 }
+
 .navbar a:hover {
   color: #f1356d;
 }
