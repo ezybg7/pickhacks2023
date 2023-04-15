@@ -45,14 +45,14 @@
 }
 
 .navbar a:hover {
-  color: #f1356d88;
-  border-bottom: rgba(255, 123, 0, 0.5) 4px solid;
+  color: #f35477;
+  border-bottom: rgba(39, 131, 184, 0.8) 4px solid;
 }
 
 .navbarButtons {
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 215, 0, 0.8);
+  background-color: rgba(55, 174, 243, 0.8);
   border-radius: 6px;
   font-weight:600;
   font-size: 23px;
