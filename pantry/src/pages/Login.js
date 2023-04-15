@@ -6,7 +6,6 @@ import {
     getAuth,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
-    onAuthStateChanged,
     signOut
 //Update the below URL with the appropriate version if necessary.
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
@@ -44,6 +43,8 @@ const Login = () => {
         .then((userCredential) => {
             const user = userCredential.user;
             alert("You have signed in successfully!");
+            setEmail('');
+            setPassword('');
             setLoggedIn(true);
         })
         .catch((error) => {
@@ -59,13 +60,13 @@ const Login = () => {
     }
 
     return (
-        <body>
+        <body className='form'>
             <div id="authForm">
                 <h2>Sign Up or Sign In</h2>
-                <input value={email} onChange={(e) => setEmail(e.target.value)}/>
-                <input value={password} onChange={(e) => setPassword(e.target.value)} type='password'/>
-                {loggedIn &&
+                {!loggedIn &&
                     <>
+                        <input value={email} onChange={(e) => setEmail(e.target.value)}/>
+                        <input value={password} onChange={(e) => setPassword(e.target.value)} type='password'/>
                         <button id="signUpButton" onClick={userSignUp}>Sign Up</button>
                         <button id="signInButton" onClick={userSignIn}>Sign In</button>
                     </>
