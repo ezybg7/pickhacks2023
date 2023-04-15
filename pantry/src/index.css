@@ -14,7 +14,9 @@
 }
 
 .navbar h1 {
-  color:rgb(219, 84, 84);
+  color:rgb(0, 187, 0);
+  font-size:xx-large;
+  text-decoration: underline;
 }
 
 .navbar .links {
