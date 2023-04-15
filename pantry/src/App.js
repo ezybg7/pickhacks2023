@@ -1,9 +1,15 @@
-import './styles/App.css';
+//import './styles/App.css';
+import Navbar from './components/Navbar';
+import Home from './Home';
 
 function App() {
+  const title = 'Welcome to the website!';
   return (
-    <div>
-
+    <div className="App">
+      <Navbar />
+      <div className="content">
+        <Home/>
+      </div>
     </div>
   );
 }
