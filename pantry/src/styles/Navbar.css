@@ -5,7 +5,7 @@
 }
 
 .navbar {
-  background-color: #4b4a4a;
+  background-color: #99DABA;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -45,14 +45,14 @@
 }
 
 .navbar a:hover {
-  color: #f1356d;
-  border-bottom: rgba(62, 81, 252, 0.5) 4px solid;
+  color: #f1356d88;
+  border-bottom: rgba(255, 123, 0, 0.5) 4px solid;
 }
 
 .navbarButtons {
   justify-content: center;
   align-items: center;
-  background-color: rgb(8, 245, 87);
+  background-color: rgba(255, 215, 0, 0.8);
   border-radius: 6px;
   font-weight:600;
   font-size: 23px;
