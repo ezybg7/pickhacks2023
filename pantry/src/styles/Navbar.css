@@ -21,7 +21,7 @@
     gap: 1rem;
 }
 
-.navbar h1 {
+.site-title {
     font-size: 72px;
     background: -webkit-linear-gradient(#2E915F, #064525);
     -webkit-background-clip: text;
@@ -38,8 +38,11 @@
     color: inherit;
     margin-left: 16px;
     text-decoration: none;
-    padding: 6px;
+    height: 100%;
+    display: flex;
+    padding: .25rem;
 }
+
 .navbar a:hover {
   color: #f1356d;
 }
