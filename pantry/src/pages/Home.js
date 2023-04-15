@@ -1,5 +1,5 @@
-
 import '../styles/Cover.css';
+
 const Home = () => {
 
 
