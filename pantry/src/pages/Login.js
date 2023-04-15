@@ -61,14 +61,18 @@ const Login = () => {
 
     return (
         <body className='form'>
-            <div id="authForm">
-                <h2>Sign Up or Sign In</h2>
+            <div id="authForm">       
                 {!loggedIn &&
                     <>
-                        <input value={email} onChange={(e) => setEmail(e.target.value)}/>
-                        <input value={password} onChange={(e) => setPassword(e.target.value)} type='password'/>
-                        <button id="signUpButton" onClick={userSignUp}>Sign Up</button>
-                        <button id="signInButton" onClick={userSignIn}>Sign In</button>
+                        <h2>Sign Up or Sign In</h2>
+                        <div className = "inputField">
+                          <input placeholder = "email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                          <input placeholder = "password" value={password} onChange={(e) => setPassword(e.target.value)} type='password'/>
+                        </div>
+                        <div>
+                          <button id="signUpButton" onClick={userSignUp}>Sign Up</button>
+                          <button id="signInButton" onClick={userSignIn}>Sign In</button>
+                        </div>
                     </>
                 }
                 <button id="signOutButton" onClick={userSignOut}>Sign Out</button>
