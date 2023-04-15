@@ -75,6 +75,3 @@ const Login = () => {
         </body>
     );
 }
-
-
-export default Login;
