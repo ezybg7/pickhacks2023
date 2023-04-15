@@ -1,22 +1,44 @@
-.navbar {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  max-width: 600px;
-  margin: 0 auto;
-  border-bottom: 1px sold #f2f2f2;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
+.navbar {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f2f2f2;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.navbar ul{
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+h1 {
+    font-size: 72px;
+    background: -webkit-linear-gradient(#2E915F, #064525);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 
 .navbar .links {
   margin-left: auto;
-  
   border-radius: 6px;
 }
 
 .navbar a {
-  margin-left: 16px;
-  text-decoration: none;
-  padding: 6px;
+    color: inherit;
+    margin-left: 16px;
+    text-decoration: none;
+    padding: 6px;
 }
 .navbar a:hover {
   color: #f1356d;
@@ -28,8 +50,3 @@
   border-radius: 6px;
 }
 
-.navbar h1 {
-  color:rgb(0, 187, 0);
-  font-size:xx-large;
-  text-decoration: underline;
-}
