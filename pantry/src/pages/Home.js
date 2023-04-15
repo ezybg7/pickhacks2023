@@ -1,4 +1,4 @@
-import '../styles/Cover.css';
+import '../styles/Home.css';
 
 const Home = () => {
 
