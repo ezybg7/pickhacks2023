@@ -17,3 +17,7 @@
   a:active {
     color: #1a046c;
   }  
+
+  .marginStyle {
+    margin: 100px;
+  }

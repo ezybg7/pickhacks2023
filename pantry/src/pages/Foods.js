@@ -17,6 +17,9 @@ const Foods = () => {
       ))}
 
       <p> i will add a button later too lazy rn</p>
+      <button onClick={() => {alert('logged in')}}>Login</button>
+      <button onClick={() => {alert('registered')}}>Register</button>
+
     </div>
    );
 }
