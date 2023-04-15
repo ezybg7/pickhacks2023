@@ -29,10 +29,7 @@ const Foods = () => {
 
   return ( 
     <div>
-      <button onClick={() => {alert('logged in')}}>Login</button>
-      <button onClick={() => {alert('registered')}}>Register</button>
-
-        <FoodInput value = {inputFood} onChange = {setInputFood}/>
+        <FoodInput value = {inputFood} onChange = {setInputFood} />
         <button onClick = {addFood}>Add Food</button>
         <FoodList foods={foodsList} title = "All Foods List" handleDelete = {handleDelete}/>
         <FoodList foods = {foodsList.filter((foodsList) => foodsList.category === 'fruit')} title = "Fruits"/>
