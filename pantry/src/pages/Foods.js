@@ -1,22 +1,41 @@
+import FoodInput from '../components/FoodInput';
+import FoodList from '../components/FoodList';
 import '../styles/Foods.css'
-import { useState }  from 'react';
+import { useState, useEffect }  from 'react';
 
 const Foods = () => {
   const [foodsList,  setFoodsList] = useState([
     { name: 'Apple', category: 'fruit', owner: 'user', expirationDate: 'null', id: 1 },
     { name: 'Pizza', category: 'restaurant', owner: 'user', expirationDate: 'null', id: 2 },
     { name: 'Tomato', category: 'fruit', owner: 'user', expirationDate: 'null', id: 3 }
-  ])
+  ]);
+
+  const [inputFood, setInputFood] = useState([
+    {name: 'Carrot', category: 'vegetable', owner: 'user2', expirationDate: '4/19', id: 4}
+  ]);
+
+  const handleDelete = (id) => {
+      const newFoods = foodsList.filter(food => food.id !== id)
+      setFoodsList(newFoods);
+  };
+
+  const addFood = () => {
+    setFoodsList([...foodsList, setInputFood])
+  };
+
+  useEffect(() => {
+    console.log('foodsList was changed');
+  }, [foodsList]);
+
   return ( 
     <div>
-      <h1>Foods List</h1>
-      {foodsList.map((food) => (
-        <div className="food-list-display" key = {food.id}>
-          <h3>Name: { food.name } Category: {food.category} Owner: {food.user} Exp. Date: {food.expirationDate}</h3>
-        </div>
-      ))}
+      <button onClick={() => {alert('logged in')}}>Login</button>
+      <button onClick={() => {alert('registered')}}>Register</button>
 
-      <p> i will add a button later too lazy rn</p>
+        <FoodInput value = {inputFood} onChange = {setInputFood}/>
+        <button onClick = {addFood}>Add Food</button>
+        <FoodList foods={foodsList} title = "All Foods List" handleDelete = {handleDelete}/>
+        <FoodList foods = {foodsList.filter((foodsList) => foodsList.category === 'fruit')} title = "Fruits"/>
     </div>
    );
 }

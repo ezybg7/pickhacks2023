@@ -1,0 +1,29 @@
+ /* unvisited link */
+ a:link {
+    color: #7063a0;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: #1a046c;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: #5c2ffe;
+  }
+  
+  /* selected link */
+  a:active {
+    color: #1a046c;
+  }  
+
+  .marginStyle {
+    margin: 100px;
+  }
+
+.cow {
+  display: flex;
+  width: 100px;
+  height: 100px;
+}

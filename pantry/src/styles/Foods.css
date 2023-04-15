@@ -4,6 +4,7 @@
   background-color: rgba(54, 189, 230, 0.288);
   border-radius: 5px;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .food-list-display:hover {
