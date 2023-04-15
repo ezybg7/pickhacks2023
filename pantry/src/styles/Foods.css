@@ -3,6 +3,7 @@
   margin: 10px;
   background-color: rgba(54, 189, 230, 0.288);
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .food-list-display:hover {

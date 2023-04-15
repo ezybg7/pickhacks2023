@@ -1,0 +1,35 @@
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom: 1px sold #f2f2f2;
+}
+
+.navbar .links {
+  margin-left: auto;
+  
+  border-radius: 6px;
+}
+
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+  color: #f1356d;
+}
+
+.navbarButtons {
+  color: blue;
+  background-color: greenyellow;
+  border-radius: 6px;
+}
+
+.navbar h1 {
+  color:rgb(0, 187, 0);
+  font-size:xx-large;
+  text-decoration: underline;
+}
