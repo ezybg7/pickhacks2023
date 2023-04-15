@@ -60,7 +60,7 @@ const Login = () => {
     }
 
     return (
-        <body>
+        <body className='form'>
             <div id="authForm">
                 <h2>Sign Up or Sign In</h2>
                 {!loggedIn &&

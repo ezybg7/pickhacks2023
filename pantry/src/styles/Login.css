@@ -17,8 +17,7 @@
   gap: 10px;
 }
 
-body {
+.form {
   text-align: center; 
-  background-color: lightseagreen; 
   color: black;
 }
