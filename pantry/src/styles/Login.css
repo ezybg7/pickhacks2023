@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.container h1 {
+  margin: 20px;
+}
+
 .inputStyles {
   align-items: left; 
   margin: 5px;
@@ -16,4 +20,24 @@
 .inputStyles h2 {
   
   text-decoration: underline 2px;
+}
+
+.container h3 {
+  color:rgba(47, 67, 241, 0.856);
+}
+.regText{
+  text-decoration: underline 2px;
+  color:rgba(47, 67, 241, 0.856);
+}
+
+.regText:hover {
+  color: #f35477;
+}
+
+.regText:visited {
+  color:rgba(199, 1, 206, 0.795);
+}
+
+.regText:active {
+  color:rgb(251, 135, 255);
 }
