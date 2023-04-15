@@ -1,1 +1,11 @@
-import '../styles/register.css'
+import '../styles/Register.css'
+
+const Register = () => {
+    return (
+        <div>
+
+        </div>
+    );
+}
+ 
+export default Register;
