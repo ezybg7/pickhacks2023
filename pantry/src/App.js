@@ -6,8 +6,6 @@ import {Route, Routes} from 'react-router-dom'
 function App() {
   const title = 'Welcome to the website!';
 
-
-
   return (
     <div className="App">
       <Navbar/>
