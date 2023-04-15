@@ -11,6 +11,7 @@ import {Route, Routes} from 'react-router-dom'
 function App() {
 
   return (
+
     <div className="App">
       <Navbar/>
       <div className="content">
@@ -21,8 +22,6 @@ function App() {
           <Route path='/register' element={<Register/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/grocery-map' element={<GroceryMap/>} />
-
-
         </Routes>
       </div>
     </div>
