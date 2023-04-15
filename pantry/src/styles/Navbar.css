@@ -21,7 +21,7 @@
     gap: 1rem;
 }
 
-h1 {
+.navbar h1 {
     font-size: 72px;
     background: -webkit-linear-gradient(#2E915F, #064525);
     -webkit-background-clip: text;
