@@ -44,7 +44,7 @@ const Navbar = () => {
     <nav className="navbar">
       <h1 className='site-title'>Pantry</h1>
       {
-        showLoggedIn?<h2>Currently Logged In as </h2>:null
+        !showLoggedIn?<h2>Currently Logged In as </h2>:null
       }
       <div className = "links">     
           <Link to = "/" className = "navbarButtons"> Home </Link>
