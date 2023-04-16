@@ -5,8 +5,7 @@
 
 .bg {
     background-image:
-    url(
-    "https://cdn.discordapp.com/attachments/1030912487274598491/1096992261910310952/storage.png");
+    url("https://cdn.discordapp.com/attachments/1030912487274598491/1096992261910310952/storage.png");
     background-size: "cover";
     align-items: center;
     height: 100vh;

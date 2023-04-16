@@ -1,5 +1,5 @@
 import '../styles/Login.css'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import firebaseConfig from './firebaseConfig';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import {
@@ -17,9 +17,6 @@ const Login = () => {
 
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
-
-    const placeHolderEmail = "email";
-    const placeHolderPassword = "password";
 
     const userSignUp = async() => {
         createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
@@ -65,17 +62,21 @@ const Login = () => {
                     <>
                         <h2>Sign Up or Sign In</h2>
                         <div className = "inputField">
-                          <LogInInput placeholder = {placeHolderEmail} value={email} onChange={setEmail}/>
-                          <LogInInput placeholder = {placeHolderPassword} value={password} onChange={setPassword}/>
+                          <input placeholder = "email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                          <input placeholder = "password" value={password} onChange={(e) => setPassword(e.target.value)} type='password'/>
                         </div>
                         <div>
-                          <button className = "signUp-InButton" onClick={userSignUp}>Sign Up</button>
-                          <button className = "signUp-InButton" onClick={userSignIn}>Sign In</button>
-                          <button className = "signUp-InButton" onClick={userSignOut}>Sign Out</button>
+                          <button id="signUpButton" onClick={userSignUp}>Sign Up</button>
+                          <button id="signInButton" onClick={userSignIn}>Sign In</button>
                         </div>
                     </>
                 }
-                <button id="signOutButton" onClick={userSignOut}>Sign Out</button>
+                {loggedIn &&
+                    <>
+                        <button id="signOutButton" onClick={userSignOut}>Sign Out</button>
+                    </>
+                }
+                
             </div>
         </body>
     );
