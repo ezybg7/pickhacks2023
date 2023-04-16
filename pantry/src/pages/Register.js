@@ -1,8 +1,10 @@
 import LogInInput from '../components/LogInInput';
 import '../styles/Register.css'
 import {useState, useEffect} from 'react';
+import { TabTitle } from '../utilities/GeneralFunctions';
 
 const Register = () => {
+  TabTitle('Register  - Pantry');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
