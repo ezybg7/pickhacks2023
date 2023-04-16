@@ -1,8 +1,12 @@
 import '../styles/FoodInput.css'
 
-const FoodInput = ( { input, onChange}) => {
+const FoodInput = ( { input, onChange }) => {
   return ( 
-    <input className = "input" input = {input} onChange = { (e) => onChange(e.target.input)} />
+    <input 
+      className = "input"
+      input = {input} 
+      onChange = { (e) => onChange(e.target.input)} 
+    />
    );
 }
  

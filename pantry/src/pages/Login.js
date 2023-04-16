@@ -1,4 +1,5 @@
 import '../styles/Login.css'
+import LogInInput from '../components/LogInInput';
 import { useState, useEffect } from 'react'
 import firebaseConfig from './firebaseConfig';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
@@ -20,6 +21,9 @@ const Login = () => {
 
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
+
+    const placeHolderEmail = "email";
+    const placeHolderPassword = "password";
 
     const userSignUp = async() => {
 
@@ -66,8 +70,8 @@ const Login = () => {
                     <>
                         <h2>Sign Up or Sign In</h2>
                         <div className = "inputField">
-                          <input placeholder = "email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                          <input placeholder = "password" value={password} onChange={(e) => setPassword(e.target.value)} type='password'/>
+                          <LogInInput placeholder = {placeHolderEmail} value={email} onChange={setEmail}/>
+                          <LogInInput placeholder = {placeHolderPassword} value={password} onChange={setPassword}/>
                         </div>
                         <div>
                           <button id="signUpButton" onClick={userSignUp}>Sign Up</button>

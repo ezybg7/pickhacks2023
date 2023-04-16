@@ -1,10 +1,8 @@
 import '../styles/About.css'
-//import '../styles/Cover.css'
-
 
 const About = () => {
     return (
-      <body>
+      <body className = "bgcolor">
         <div>
           <h1>About Our Vision</h1>
         </div>
