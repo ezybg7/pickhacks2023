@@ -1,3 +1,20 @@
+  body {
+    background-color: #70e47a;
+  }
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline 3px;
+    margin-top: 30px;
+    color: #008f45;
+  }
+
+  h3 {
+    font-size: 21px;
+    color: rgb(48, 48, 48);
+  }
  /* unvisited link */
  a:link {
     color: #2e915f;
@@ -5,7 +22,7 @@
   
   /* visited link */
   a:visited {
-    color: #064525;
+    color: #085c32;
   }
   
   /* mouse over link */
@@ -20,7 +37,7 @@
 
   .marginStyle {
     margin: 225px;
-    margin-top: 50px;
+    margin-top: 30px;
   }
 
   .paragraphStyle {
