@@ -2,7 +2,7 @@
   align-items: left;
   padding: 10px;
   margin: 10px;
-  background-color: rgba(54, 189, 230, 0.288);
+  background-color: rgba(255, 255, 255, 0.288);
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
@@ -10,5 +10,5 @@
 
 .food-list-display:hover {
   box-shadow: 1px 3px 5px rgba(0,  0, 0,  0.3);
-  background-color: rgba(28, 187, 226, 0.493);
+  background-color: rgba(187, 187, 187, 0.493);
 }

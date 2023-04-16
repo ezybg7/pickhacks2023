@@ -21,13 +21,12 @@
 }
 
 .inputField {
-  margin-top: 10px;
   margin-bottom: 10px;
   opacity: .5;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #adff76;
+  background-color: rgba(255, 255, 255, 0.288);
   border: none;
   border-radius: 5px;
   outline: none;

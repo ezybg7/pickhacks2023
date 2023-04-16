@@ -1,5 +1,5 @@
 import '../styles/Login.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import firebaseConfig from './firebaseConfig';
 import { TabTitle } from '../utilities/GeneralFunctions';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
@@ -11,6 +11,8 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 
 const Login = () => {
+
+
   TabTitle('Login - Pantry'); 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -18,6 +20,13 @@ const Login = () => {
 
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
+
+    useEffect(()=>{
+        if(auth.currenUser)
+            setLoggedIn(true)
+        else   
+            setLoggedIn(false)
+        },[])
 
     const userSignUp = async() => {
         createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
@@ -43,7 +52,7 @@ const Login = () => {
             //setEmail(' ') if the line below broke the code sorry
             setEmail(email.substring(0, email.indexOf("@")));
             setPassword('');
-            setLoggedIn(true);
+            setLoggedIn(true)
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -54,7 +63,7 @@ const Login = () => {
 
     const userSignOut = async() => {
         await signOut(auth);
-        setLoggedIn(false);
+        setLoggedIn(false)
     }
 
     return (
@@ -88,5 +97,4 @@ const Login = () => {
     );
 }
 
-export function userCredential(){};
 export default Login;

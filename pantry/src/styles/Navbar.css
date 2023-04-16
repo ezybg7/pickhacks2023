@@ -5,15 +5,18 @@
 }
 
 .navbar {
-  background-color: #99DABA;
+  position: fixed;
+  background-color: #2f7554;
   flex-direction: row;
   color: white;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #f2f2f2;
   gap: 2rem;
+  width: 100%;
   padding: 0 1rem;
   height: 75px;
+  top: 0;
+  left: 0;
 }
 
 .navbarButtons {
@@ -32,8 +35,9 @@
 
 .site-title {
   font-size: 50px;
-  background: -webkit-linear-gradient(#2E915F, #064525);
+  background: -webkit-linear-gradient(#ffffff, #7e7258);
   background-clip: text;
+  text-decoration: none;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 5px;
