@@ -1,5 +1,5 @@
 import '../styles/Login.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import firebaseConfig from './firebaseConfig';
 import { TabTitle } from '../utilities/GeneralFunctions';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
@@ -11,6 +11,8 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 
 const Login = () => {
+
+
   TabTitle('Login - Pantry'); 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -18,6 +20,13 @@ const Login = () => {
 
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
+
+    useEffect(()=>{
+        if(auth.currenUser)
+            setLoggedIn(!true)
+        else   
+            setLoggedIn(!false)
+        },[])
 
     const userSignUp = async() => {
         createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
@@ -57,7 +66,7 @@ const Login = () => {
     }
 
     return (
-        <body className='form'>
+        <div className='form'>
             <div id="authForm">       
                 {!loggedIn &&
                     <>
@@ -69,20 +78,17 @@ const Login = () => {
                         <div>
                           <button className="signUp-InButton" onClick={userSignUp}>Sign Up</button>
                           <button className="signUp-InButton" onClick={userSignIn}>Sign In</button>
-                          <button className="signUp-InButton" onClick={userSignOut}>Sign Out</button>
                         </div>
                     </>
                 }
                 {loggedIn &&
-                    <>
-                        
-                    </>
+                    <button className="signUp-InButton" onClick={userSignOut}>Sign Out</button>
+
                 }
                 
             </div>
-        </body>
+        </div>
     );
 }
 
-export function userCredential(){};
 export default Login;

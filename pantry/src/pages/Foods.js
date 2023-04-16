@@ -2,20 +2,22 @@ import FoodInput from '../components/FoodInput';
 import FoodList from '../components/FoodList';
 import firebaseConfig from './firebaseConfig';
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
-import { doc, setDoc, updateDoc } from "firebase/firestore"; 
+import { doc, setDoc, updateDoc , arrayUnion, arrayRemove } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js"; 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
-import userCredential from './Login';
 import '../styles/Foods.css'
 import { useState, useEffect }  from 'react';
 import { TabTitle } from '../utilities/GeneralFunctions';
+import userCredential from './Login'
 
 const Foods = () => {
   TabTitle('Foods - Pantry'); 
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
   const auth = getAuth(app);
-  const u_id = auth.uid;
+  const [Uid, setUid] = useState();
+
+
 
   const [foodsList,  setFoodsList] = useState([
     { name: 'Apple', category: 'fruit', owner: 'user', expirationDate: 'null', id: 1 },
@@ -32,15 +34,25 @@ const Foods = () => {
       setFoodsList(newFoods);
   };
 
+
+
+  useEffect(()=>{
+    if (auth.currentUser)
+      setUid(auth.currentUser.uid)
+    },[])
+
+  console.log(Uid, "hey")
+
+  // setDoc(doc(db, "users", Uid), {
+  //   food:[]
+  // });
   
 
 
 
 
   const addFood = () => {
-    // return db.collection("users").doc(userCredential.user.uid).set({
-    //     food: []
-    // })
+
   }
 
   useEffect(() => {

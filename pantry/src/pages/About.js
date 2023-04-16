@@ -4,7 +4,7 @@ import { TabTitle } from '../utilities/GeneralFunctions';
 const About = () => {
   TabTitle('About - Pantry');
     return (
-      <body className = "bgcolor">
+      <div className = "bgcolor">
         <div>
           <h1>About Our Vision</h1>
         </div>
@@ -32,7 +32,7 @@ const About = () => {
           <h3>{'\t'}The food expiration notification system, Pantry's most important feature, will send a reminder 2 days before a certain food is set to expire (based on the date the food was added). This timely reminder will make sure that all food can be used with minimal waste. Pantry will help you to make better use of food within a timely manner, and reduce the amount of waste due to food expiring unexpectedly.</h3>
           </div>
         </div>
-      </body>
+      </div>
     );
 }
  
