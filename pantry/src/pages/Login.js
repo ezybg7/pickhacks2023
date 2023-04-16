@@ -40,7 +40,8 @@ const Login = () => {
         .then((userCredential) => {
             const user = userCredential.user;
             alert("You have signed in successfully!");
-            setEmail('');
+            //setEmail(' ') if the line below broke the code sorry
+            setEmail(email.substring(0, email.indexOf("@")));
             setPassword('');
             setLoggedIn(true);
         })
@@ -57,8 +58,8 @@ const Login = () => {
     }
 
     return (
-        <body className='form'>
-            <div id="authForm">       
+        <div className='form'>
+            <div className="authForm">       
                 {!loggedIn &&
                     <>
                         <h2>Sign Up or Sign In</h2>
@@ -69,18 +70,21 @@ const Login = () => {
                         <div>
                           <button className="signUp-InButton" onClick={userSignUp}>Sign Up</button>
                           <button className="signUp-InButton" onClick={userSignIn}>Sign In</button>
-                          <button className="signUp-InButton" onClick={userSignOut}>Sign Out</button>
                         </div>
                     </>
                 }
                 {loggedIn &&
                     <>
-                        
+                      <h1 className="bruh"> Welcome to Pantry, {email}! </h1>
+                      <h2>Click Here to Sign Out</h2>
+                      <div>
+                        <button className= "bruh2" onClick={userSignOut}>Sign Out</button>
+                      </div>
                     </>
                 }
                 
             </div>
-        </body>
+        </div>
     );
 }
 
