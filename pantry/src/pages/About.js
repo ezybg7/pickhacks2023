@@ -16,7 +16,12 @@ const About = () => {
           </div>
           <div className = "paragraphStyle">
           <img className = "picr" src="https://cdn.discordapp.com/attachments/1030912487274598491/1096980408060608632/thumbnail_ZeroWaste.png" alt="React Image" />
+          <h3>{'\t'}Around 60% of this waste comes from homes, often as a result of food expiration. This application, 'Pantry', allows users to minimize their food waste through expiration tracking and reminders. </h3>
 
+
+          </div>
+
+          <div className = "paragraphStyle">
           <h3>{'\t'}Use Pantry to track both perishable and nonperishable food, and keep track of what is available at any time with a free account. After adding items to different locations such as refrigerators and cabinets with an easy-to-use input interface, each one will appear in your personal 'Pantry'. Your food will be auto-sorted by expiration date, but can be sorted to search for other characteristics as well. </h3>
 
           </div>
