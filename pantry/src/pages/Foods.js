@@ -1,9 +1,18 @@
 import FoodInput from '../components/FoodInput';
 import FoodList from '../components/FoodList';
+import firebaseConfig from './firebaseConfig';
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+import userCredential from './Login';
 import '../styles/Foods.css'
 import { useState, useEffect }  from 'react';
 
 const Foods = () => {
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
   const [foodsList,  setFoodsList] = useState([
     { name: 'Apple', category: 'fruit', owner: 'user', expirationDate: 'null', id: 1 },
     { name: 'Pizza', category: 'restaurant', owner: 'user', expirationDate: 'null', id: 2 },
@@ -20,8 +29,10 @@ const Foods = () => {
   };
 
   const addFood = () => {
-    setFoodsList([...foodsList, setInputFood])
-  };
+    return db.collection("users").doc(userCredential.user.uid).set({
+        food: []
+    })
+  }
 
   useEffect(() => {
     console.log('foodsList was changed');

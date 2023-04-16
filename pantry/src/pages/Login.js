@@ -1,6 +1,5 @@
 import '../styles/Login.css'
-import LogInInput from '../components/LogInInput';
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import firebaseConfig from './firebaseConfig';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import {
@@ -8,10 +7,7 @@ import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     signOut
-//Update the below URL with the appropriate version if necessary.
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
-
-
 
 const Login = () => {
     
@@ -22,13 +18,8 @@ const Login = () => {
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    const placeHolderEmail = "email";
-    const placeHolderPassword = "password";
-
     const userSignUp = async() => {
-
-        createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
+        createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
             const user = userCredential.user;
             console.log(user);
             alert("Your account has been created!");
@@ -40,6 +31,7 @@ const Login = () => {
             const errorMessage = error.message;
             console.log(errorCode + errorMessage)
         })
+        
     }
 
     const userSignIn = async() => {
@@ -70,14 +62,18 @@ const Login = () => {
                     <>
                         <h2>Sign Up or Sign In</h2>
                         <div className = "inputField">
-                          <LogInInput placeholder = {placeHolderEmail} value={email} onChange={setEmail}/>
-                          <LogInInput placeholder = {placeHolderPassword} value={password} onChange={setPassword}/>
+                          <input placeholder = "email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                          <input placeholder = "password" value={password} onChange={(e) => setPassword(e.target.value)} type='password'/>
                         </div>
                         <div>
-                          <button className = "signUp-InButton" onClick={userSignUp}>Sign Up</button>
-                          <button className = "signUp-InButton" onClick={userSignIn}>Sign In</button>
-                          <button className = "signUp-InButton" onClick={userSignOut}>Sign Out</button>
+                          <button id="signUpButton" onClick={userSignUp}>Sign Up</button>
+                          <button id="signInButton" onClick={userSignIn}>Sign In</button>
                         </div>
+                    </>
+                }
+                {loggedIn &&
+                    <>
+                        <button id="signOutButton" onClick={userSignOut}>Sign Out</button>
                     </>
                 }
                 
@@ -86,4 +82,5 @@ const Login = () => {
     );
 }
 
+export function userCredential(){};
 export default Login;
