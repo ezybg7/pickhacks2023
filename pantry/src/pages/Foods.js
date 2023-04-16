@@ -2,8 +2,9 @@ import FoodInput from '../components/FoodInput';
 import FoodList from '../components/FoodList';
 import firebaseConfig from './firebaseConfig';
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
-
+import { doc, setDoc, updateDoc } from "firebase/firestore"; 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 import userCredential from './Login';
 import '../styles/Foods.css'
 import { useState, useEffect }  from 'react';
@@ -12,6 +13,8 @@ const Foods = () => {
 
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
+  const auth = getAuth(app);
+  const u_id = auth.uid;
 
   const [foodsList,  setFoodsList] = useState([
     { name: 'Apple', category: 'fruit', owner: 'user', expirationDate: 'null', id: 1 },
@@ -28,10 +31,15 @@ const Foods = () => {
       setFoodsList(newFoods);
   };
 
+  
+
+
+
+
   const addFood = () => {
-    return db.collection("users").doc(userCredential.user.uid).set({
-        food: []
-    })
+    // return db.collection("users").doc(userCredential.user.uid).set({
+    //     food: []
+    // })
   }
 
   useEffect(() => {
