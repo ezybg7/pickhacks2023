@@ -1,5 +1,5 @@
 import '../styles/Login.css'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import firebaseConfig from './firebaseConfig';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import {
@@ -7,10 +7,7 @@ import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     signOut
-//Update the below URL with the appropriate version if necessary.
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
-
-
 
 const Login = () => {
     
@@ -22,9 +19,7 @@ const Login = () => {
     const auth = getAuth(app);
 
     const userSignUp = async() => {
-
-        createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
+        createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
             const user = userCredential.user;
             console.log(user);
             alert("Your account has been created!");
@@ -36,6 +31,7 @@ const Login = () => {
             const errorMessage = error.message;
             console.log(errorCode + errorMessage)
         })
+        
     }
 
     const userSignIn = async() => {
@@ -75,10 +71,16 @@ const Login = () => {
                         </div>
                     </>
                 }
-                <button id="signOutButton" onClick={userSignOut}>Sign Out</button>
+                {loggedIn &&
+                    <>
+                        <button id="signOutButton" onClick={userSignOut}>Sign Out</button>
+                    </>
+                }
+                
             </div>
         </body>
     );
 }
 
+export function userCredential(){};
 export default Login;

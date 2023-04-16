@@ -2,7 +2,6 @@ import './styles/App.css';
 import Home from './pages/Home';
 import About from './pages/About';
 import Foods from './pages/Foods';
-import Register from './pages/Register';
 import Login from './pages/Login';
 import GroceryMap from './pages/GroceryMap';
 import Navbar from './components/Navbar';
@@ -19,7 +18,6 @@ function App() {
           <Route path='/' element={<Home/>} />
           <Route path='/about' element={<About/>} />
           <Route path='/foods' element={<Foods/>} />
-          <Route path='/register' element={<Register/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/grocery-map' element={<GroceryMap/>} />
         </Routes>
