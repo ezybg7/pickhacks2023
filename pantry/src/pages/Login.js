@@ -76,10 +76,11 @@ const Login = () => {
                         <div>
                           <button className = "signUp-InButton" onClick={userSignUp}>Sign Up</button>
                           <button className = "signUp-InButton" onClick={userSignIn}>Sign In</button>
+                          <button className = "signUp-InButton" onClick={userSignOut}>Sign Out</button>
                         </div>
                     </>
                 }
-                <button id="signOutButton" onClick={userSignOut}>Sign Out</button>
+                
             </div>
         </body>
     );

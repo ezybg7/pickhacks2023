@@ -12,6 +12,7 @@
 .inputField {
   margin-top: 10px;
   margin-bottom: 10px;
+  opacity: .6;
 }
 
 .signUp-InButton {
