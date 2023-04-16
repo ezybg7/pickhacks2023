@@ -8,16 +8,12 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth
 import '../styles/Foods.css'
 import { useState, useEffect }  from 'react';
 import { TabTitle } from '../utilities/GeneralFunctions';
-import userCredential from './Login'
 
 const Foods = () => {
   TabTitle('Foods - Pantry'); 
   const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
   const auth = getAuth(app);
   const [Uid, setUid] = useState();
-
-
 
   const [foodsList,  setFoodsList] = useState([
     { name: 'Apple', category: 'fruit', owner: 'user', expirationDate: 'null', id: 1 },
@@ -34,22 +30,12 @@ const Foods = () => {
       setFoodsList(newFoods);
   };
 
-
-
   useEffect(()=>{
     if (auth.currentUser)
       setUid(auth.currentUser.uid)
-    },[])
+  },[])
 
-  console.log(Uid, "hey")
-
-  // setDoc(doc(db, "users", Uid), {
-  //   food:[]
-  // });
   
-
-
-
 
   const addFood = () => {
 

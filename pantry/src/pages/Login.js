@@ -23,9 +23,9 @@ const Login = () => {
 
     useEffect(()=>{
         if(auth.currenUser)
-            setLoggedIn(!true)
+            setLoggedIn(true)
         else   
-            setLoggedIn(!false)
+            setLoggedIn(false)
         },[])
 
     const userSignUp = async() => {
@@ -51,7 +51,7 @@ const Login = () => {
             alert("You have signed in successfully!");
             setEmail('');
             setPassword('');
-            setLoggedIn(true);
+            setLoggedIn(true)
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -62,7 +62,7 @@ const Login = () => {
 
     const userSignOut = async() => {
         await signOut(auth);
-        setLoggedIn(false);
+        setLoggedIn(false)
     }
 
     return (
@@ -83,7 +83,6 @@ const Login = () => {
                 }
                 {loggedIn &&
                     <button className="signUp-InButton" onClick={userSignOut}>Sign Out</button>
-
                 }
                 
             </div>
