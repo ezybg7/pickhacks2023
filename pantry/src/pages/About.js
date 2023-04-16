@@ -1,6 +1,8 @@
 import '../styles/About.css'
+import { TabTitle } from '../utilities/GeneralFunctions';
 
 const About = () => {
+  TabTitle('About - Pantry');
     return (
       <body className = "bgcolor">
         <div>

@@ -1,7 +1,8 @@
 import '../styles/Home.css';
+import { TabTitle } from '../utilities/GeneralFunctions';
 
 const Home = () => {
-
+  TabTitle('Pantry');
 
   return ( 
 

@@ -8,9 +8,10 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth
 import userCredential from './Login';
 import '../styles/Foods.css'
 import { useState, useEffect }  from 'react';
+import { TabTitle } from '../utilities/GeneralFunctions';
 
 const Foods = () => {
-
+  TabTitle('Foods - Pantry'); 
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
   const auth = getAuth(app);
