@@ -1,3 +1,8 @@
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
+import { initializeAuth } from "firebase/auth";
+
 const firebaseConfig = {
     apiKey: "AIzaSyBy9S5BFrLGmKjCi1PJ9PACTeBGwFr3r2Y",
     authDomain: "pantry-fc587.firebaseapp.com",
@@ -8,4 +13,8 @@ const firebaseConfig = {
     measurementId: "G-1Q5QZMMW5H"
 };
 
-export default firebaseConfig;
+if (!firebase.apps.length) {
+  const defaultApp = firebase.initializeApp(firebaseConfig);
+}
+
+export { firebase };

@@ -1,14 +1,7 @@
 import '../styles/Login.css'
 import { useEffect, useState } from 'react'
-import firebaseConfig from './firebaseConfig';
 import { TabTitle } from '../utilities/GeneralFunctions';
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
-import {
-    getAuth,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    signOut
-} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+import { firebase } from "../firebaseConfig";
 
 const Login = () => {
 
@@ -18,18 +11,15 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
     useEffect(()=>{
-        if(auth.currenUser)
+        if(firebase.auth().currentUser)
             setLoggedIn(true)
         else   
             setLoggedIn(false)
         },[])
 
     const userSignUp = async() => {
-        createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+        firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential) => {
             const user = userCredential.user;
             console.log(user);
             alert("Your account has been created!");
@@ -45,7 +35,7 @@ const Login = () => {
     }
 
     const userSignIn = async() => {
-        signInWithEmailAndPassword(auth, email, password)
+        await firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
             const user = userCredential.user;
             alert("You have signed in successfully!");
@@ -61,7 +51,7 @@ const Login = () => {
     }
 
     const userSignOut = async() => {
-        await signOut(auth);
+        await firebase.auth().signOut();
         setLoggedIn(false)
     }
 

@@ -1,18 +1,13 @@
+import '../styles/Foods.css'
 import FoodInput from '../components/FoodInput';
 import FoodList from '../components/FoodList';
-import firebaseConfig from './firebaseConfig';
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
-import { doc, setDoc, updateDoc , arrayUnion, arrayRemove } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js"; 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
-import '../styles/Foods.css'
 import { useState, useEffect }  from 'react';
 import { TabTitle } from '../utilities/GeneralFunctions';
+import { firebase } from "../firebaseConfig";
 
 const Foods = () => {
   TabTitle('Foods - Pantry'); 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
+
   const [Uid, setUid] = useState();
 
   const [foodsList,  setFoodsList] = useState([
@@ -31,15 +26,18 @@ const Foods = () => {
   };
 
   useEffect(()=>{
-    if (auth.currentUser)
-      setUid(auth.currentUser.uid)
+    if (firebase.auth().currentUser)
+      setUid(firebase.auth().currentUser.uid)
   },[])
 
-  
-
   const addFood = () => {
-
+    let timestamp = firebase.firestore.Timestamp.fromDate(new Date());
   }
+
+  const ref = firebase
+  .firestore()
+  .collection("users")
+  .doc(firebase.auth().currentUser.uid);
 
   useEffect(() => {
     console.log('foodsList was changed');
