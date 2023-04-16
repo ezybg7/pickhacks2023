@@ -74,8 +74,8 @@ const Login = () => {
                           <LogInInput placeholder = {placeHolderPassword} value={password} onChange={setPassword}/>
                         </div>
                         <div>
-                          <button id="signUpButton" onClick={userSignUp}>Sign Up</button>
-                          <button id="signInButton" onClick={userSignIn}>Sign In</button>
+                          <button className = "signUp-InButton" onClick={userSignUp}>Sign Up</button>
+                          <button className = "signUp-InButton" onClick={userSignIn}>Sign In</button>
                         </div>
                     </>
                 }
