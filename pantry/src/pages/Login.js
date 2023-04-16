@@ -18,6 +18,10 @@ const Login = () => {
             setLoggedIn(false)
         },[])
 
+
+    let timestamp = firebase.firestore.Timestamp.fromDate(new Date());
+    let expirationDate = firebase.firestore.Timestamp.fromDate(new Date());
+
     const userSignUp = async() => {
         firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential) => {
             const user = userCredential.user;
@@ -25,6 +29,17 @@ const Login = () => {
             alert("Your account has been created!");
             setEmail('');
             setPassword('');
+        })
+        .then(async ()=> {
+            await firebase
+            .firestore()
+            .collection('users')
+            .doc(firebase.auth().currentUser.uid)
+            .set({
+                food:[],
+                timestamp,
+                expirationDate
+            })
         })
         .catch((error) => {
             const errorCode = error.code;

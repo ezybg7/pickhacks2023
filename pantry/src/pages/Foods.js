@@ -9,6 +9,7 @@ const Foods = () => {
   TabTitle('Foods - Pantry'); 
 
   const [Uid, setUid] = useState();
+  const [Foods, setFoods] = useState([{ key:0, value: ""}]);
 
   const [foodsList,  setFoodsList] = useState([
     { name: 'Apple', category: 'fruit', owner: 'user', expirationDate: 'null', id: 1 },
@@ -30,14 +31,29 @@ const Foods = () => {
       setUid(firebase.auth().currentUser.uid)
   },[])
 
-  const addFood = () => {
-    let timestamp = firebase.firestore.Timestamp.fromDate(new Date());
-  }
-
   const ref = firebase
   .firestore()
   .collection("users")
-  .doc(firebase.auth().currentUser.uid);
+  .doc(Uid);
+
+  let timestamp = firebase.firestore.Timestamp.fromDate(new Date());
+  let expirationDate = firebase.firestore.Timestamp.fromDate(new Date()) -ref.get().timestamp;    
+
+  const addFood = () => {
+    if (firebase.auth().currentUser){
+      firebase.firestore().collection('users').doc(Uid)
+      .update({
+        food:[],
+        timestamp,
+        expirationDate
+      })
+    }
+  }
+
+
+
+
+
 
   useEffect(() => {
     console.log('foodsList was changed');
