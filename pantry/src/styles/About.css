@@ -1,4 +1,7 @@
-
+.bgcolor{
+  overflow-y: hidden;
+}
+  
   h1 {
     display: flex;
     justify-content: center;

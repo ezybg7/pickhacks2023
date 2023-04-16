@@ -10,5 +10,28 @@
 
 .food-list-display:hover {
   box-shadow: 1px 3px 5px rgba(0,  0, 0,  0.3);
-  background-color: rgba(187, 187, 187, 0.493);
+  background-color: rgba(255, 68, 68, 0.507);
+}
+
+.input-field{
+  margin: 10px;
+}
+
+.warning{
+ width: 100%;
+ color:white;
+ height: 100vh;
+ font-size: 40px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.warning a{
+  color:white;
+}
+
+.warning a:hover{
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(160, 159, 159, 0.486);
 }

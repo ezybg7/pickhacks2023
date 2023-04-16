@@ -10,10 +10,15 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
+    const [username, setUsername] = useState(false);
+    const [error, setError] = useState(false);
+    
 
     useEffect(()=>{
-        if(firebase.auth().currentUser)
+        if(firebase.auth().currentUser){
+            setUsername(firebase.auth().currentUser.email);
             setLoggedIn(true)
+        }
         else   
             setLoggedIn(false)
         },[])
@@ -42,6 +47,7 @@ const Login = () => {
             })
         })
         .catch((error) => {
+            setError(true);
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorCode + errorMessage)
@@ -58,6 +64,7 @@ const Login = () => {
             setEmail(email.substring(0, email.indexOf("@")));
             setPassword('');
             setLoggedIn(true)
+            setError(false);
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -69,6 +76,7 @@ const Login = () => {
     const userSignOut = async() => {
         await firebase.auth().signOut();
         setLoggedIn(false)
+        setError(false);
     }
 
     return (
@@ -85,11 +93,14 @@ const Login = () => {
                           <button className="signUp-InButton" onClick={userSignUp}>Sign Up</button>
                           <button className="signUp-InButton" onClick={userSignIn}>Sign In</button>
                         </div>
+                        {error &&
+                            <h3 className='error'>Email already exists</h3>
+                        }
                     </>
                 }
                 {loggedIn &&
                     <>
-                      <h1 className="bruh"> Welcome to Pantry, {email}! </h1>
+                      <h1 className="bruh"> Welcome to Pantry, {username.substring(0, username.indexOf('@'))}! </h1>
                       <h2>Click Here to Sign Out</h2>
                       <div>
                         <button className= "bruh2" onClick={userSignOut}>Sign Out</button>

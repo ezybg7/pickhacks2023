@@ -5,7 +5,7 @@ const FoodInput = ( { input, onChange }) => {
     <input 
       className = "input"
       input = {input} 
-      onChange = { (e) => onChange(e.target.input)} 
+      onChange = { (e) => onChange(e.target.value)} 
     />
    );
 }
