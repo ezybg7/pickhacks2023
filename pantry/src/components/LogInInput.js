@@ -1,8 +1,11 @@
 import '../styles/LogInInput.css'
 
-const LogInInput = ( { input, onChange}) => {
+const LogInInput = ( { placeholder, input, onChange}) => {
   return ( 
-    <input className = "input" email = {input} onChange = { (e) => onChange(e.target.input)} />
+    <input className = "input" 
+    placeholder = {placeholder}
+    email = {input} 
+    onChange = { (e) => onChange(e.target.input)} />
    );
 }
  

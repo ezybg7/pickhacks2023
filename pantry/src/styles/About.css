@@ -1,26 +1,40 @@
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline 3px;
+    margin-top: 30px;
+    color: #008f45;
+  }
+
+  h3 {
+    font-size: 21px;
+    color: rgb(48, 48, 48);
+  }
  /* unvisited link */
  a:link {
-    color: #7063a0;
+    color: #2e915f;
   }
   
   /* visited link */
   a:visited {
-    color: #1a046c;
+    color: #085c32;
   }
   
   /* mouse over link */
   a:hover {
-    color: #5c2ffe;
+    color: #498d1c;
   }
   
   /* selected link */
   a:active {
-    color: #1a046c;
+    color: #498d1c;
   }  
 
   .marginStyle {
     margin: 225px;
-    margin-top: 50px;
+    margin-top: 30px;
   }
 
   .paragraphStyle {
