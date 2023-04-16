@@ -1,21 +1,21 @@
  /* unvisited link */
  a:link {
-    color: #7063a0;
+    color: #2e915f;
   }
   
   /* visited link */
   a:visited {
-    color: #1a046c;
+    color: #064525;
   }
   
   /* mouse over link */
   a:hover {
-    color: #5c2ffe;
+    color: #498d1c;
   }
   
   /* selected link */
   a:active {
-    color: #1a046c;
+    color: #498d1c;
   }  
 
   .marginStyle {
