@@ -1,6 +1,7 @@
 import '../styles/Login.css'
 import { useState } from 'react'
 import firebaseConfig from './firebaseConfig';
+import { TabTitle } from '../utilities/GeneralFunctions';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import {
     getAuth,
@@ -10,7 +11,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 
 const Login = () => {
-    
+  TabTitle('Login - Pantry'); 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
