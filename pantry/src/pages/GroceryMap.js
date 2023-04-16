@@ -6,8 +6,12 @@ const GroceryMap = () => {
         <div>
             <h2>Grocery stores in the area:</h2>
             <div className='map'>
+                <div className='background-color'>
+
                 <Map/>
             </div>
+        </div>
+
         </div>
     );
 }
