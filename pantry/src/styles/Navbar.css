@@ -33,6 +33,20 @@
   background-color: #0645263a;
 }
 
+.navbarButtonsFood {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  background-color: transparent;
+  font-weight:600;
+  font-size: 23px;
+  padding: 24px 10px;
+}
+
+.navbarButtonsFood:hover{
+  background-color: #0645263a;
+}
+
 .site-title {
   font-size: 50px;
   background: -webkit-linear-gradient(#ffffff, #7e7258);
@@ -53,5 +67,9 @@
 }
 
 a.navbarButtons{
+  color: white;
+}
+
+a.navbarButtonsFood{
   color: white;
 }
