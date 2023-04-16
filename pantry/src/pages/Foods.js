@@ -9,7 +9,7 @@ const Foods = () => {
   TabTitle('Foods - Pantry'); 
 
   const [Uid, setUid] = useState();
-  const [Foods, setFoods] = useState([{ key:0, value: ""}]);
+  const [foods, setFoods] = useState([]);
 
   const [foodsList,  setFoodsList] = useState([
     { name: 'Apple', category: 'fruit', owner: 'user', expirationDate: 'null', id: 1 },
@@ -39,13 +39,17 @@ const Foods = () => {
   let timestamp = firebase.firestore.Timestamp.fromDate(new Date());
   let expirationDate = firebase.firestore.Timestamp.fromDate(new Date()) -ref.get().timestamp;    
 
+  
+
   const addFood = () => {
+    setFoods('123123123');
     if (firebase.auth().currentUser){
+      const foodsArray = ref.get().food;
+      foodsArray.push(foods);
+
       firebase.firestore().collection('users').doc(Uid)
       .update({
-        food:[],
-        timestamp,
-        expirationDate
+        food:foodsArray,
       })
     }
   }
