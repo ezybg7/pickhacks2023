@@ -2,7 +2,6 @@ import '../styles/Login.css'
 import { useEffect, useState } from 'react'
 import { TabTitle } from '../utilities/GeneralFunctions';
 import { firebase } from "../firebaseConfig";
-
 const Login = () => {
 
 
@@ -60,7 +59,7 @@ const Login = () => {
         .then((userCredential) => {
             const user = userCredential.user;
             alert("You have signed in successfully!");
-            //setEmail(' ') if the line below broke the code sorry
+            //setEmail(' ') uncomment if the line below broke the code sorry
             setEmail(email.substring(0, email.indexOf("@")));
             setPassword('');
             setLoggedIn(true)
@@ -85,6 +84,7 @@ const Login = () => {
                 {!loggedIn &&
                     <>
                         <h2>Sign Up or Sign In</h2>
+                        <h4>You must log in before using the Foods tab.</h4>
                         <div>
                           <input className = "inputField" placeholder = "email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                           <input className = "inputField" placeholder = "password" value={password} onChange={(e) => setPassword(e.target.value)} type='password'/>
@@ -112,5 +112,5 @@ const Login = () => {
         </div>
     );
 }
-
+export var loggedIn; 
 export default Login;
