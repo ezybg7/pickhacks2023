@@ -39,7 +39,8 @@ const Login = () => {
         .then((userCredential) => {
             const user = userCredential.user;
             alert("You have signed in successfully!");
-            setEmail('');
+            //setEmail(' ') if the line below broke the code sorry
+            setEmail(email.substring(0, email.indexOf("@")));
             setPassword('');
             setLoggedIn(true)
         })
@@ -57,7 +58,7 @@ const Login = () => {
 
     return (
         <div className='form'>
-            <div id="authForm">       
+            <div className="authForm">       
                 {!loggedIn &&
                     <>
                         <h2>Sign Up or Sign In</h2>
@@ -72,7 +73,13 @@ const Login = () => {
                     </>
                 }
                 {loggedIn &&
-                    <button className="signUp-InButton" onClick={userSignOut}>Sign Out</button>
+                    <>
+                      <h1 className="bruh"> Welcome to Pantry, {email}! </h1>
+                      <h2>Click Here to Sign Out</h2>
+                      <div>
+                        <button className= "bruh2" onClick={userSignOut}>Sign Out</button>
+                      </div>
+                    </>
                 }
                 
             </div>
